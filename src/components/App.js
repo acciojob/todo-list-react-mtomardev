@@ -105,7 +105,7 @@ const Todo2 = () =>{
     return(
         <div className='add_tasks_section'>
             <div className=' tasks_section'>
-            <h1>Handle Todo ADD Edit Delet</h1>
+           <textarea>To Do List</textarea>
             <input type='text' placeholder='Enter your List' value={inputValue} onChange={(e)=> setInputValue(e.target.value)}/>
             <button className=' task' onClick={handleAddTodo}>Add Todo</button>
             </div>
@@ -125,12 +125,12 @@ const Todo2 = () =>{
                             ) : (
                                 <>
                                     {todos}
-                                    <button className=' edit' onClick={()=> handleEdit(index)}>Edit</button>    
+                                    <button className='edit' onClick={()=> handleEdit(index)}>Edit</button>    
                                 </>
                             )
                           }      
                             
-                            <button className=' delete' hidden={editIndex === index} onClick={() => handleDelete(index)}>Delet</button>
+                            <button className='delete' hidden={editIndex === index} onClick={() => handleDelete(index)}>Delet</button>
                         </li>
                         )
                     })
