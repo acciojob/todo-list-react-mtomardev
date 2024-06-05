@@ -103,10 +103,12 @@ const Todo2 = () =>{
     }
 
     return(
-        <div>
+        <div className='add_tasks_section'>
+            <div className=' tasks_section'>
             <h1>Handle Todo ADD Edit Delet</h1>
             <input type='text' placeholder='Enter your List' value={inputValue} onChange={(e)=> setInputValue(e.target.value)}/>
-            <button onClick={handleAddTodo}>Add Todo</button>
+            <button className=' task' onClick={handleAddTodo}>Add Todo</button>
+            </div>
             <ul>
                 {
                     todos.map((todos, index)=>{
@@ -118,17 +120,17 @@ const Todo2 = () =>{
                                 <input type='text' placeholder='Update Text' 
                                 value={updateInput}
                                 onChange={(e)=>setUpdateInput(e.target.value)}/>
-                                <button onClick={() => handleUpdateTodo(index)}>Update</button>
+                                <button className='save' onClick={() => handleUpdateTodo(index)}>Save</button>
                                 </>
                             ) : (
                                 <>
                                     {todos}
-                                    <button onClick={()=> handleEdit(index)}>Edit</button>    
+                                    <button className=' edit' onClick={()=> handleEdit(index)}>Edit</button>    
                                 </>
                             )
                           }      
                             
-                            <button onClick={() => handleDelete(index)}>Delet</button>
+                            <button className=' delete' hidden={editIndex === index} onClick={() => handleDelete(index)}>Delet</button>
                         </li>
                         )
                     })
